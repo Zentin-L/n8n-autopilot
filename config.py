@@ -12,8 +12,9 @@ class Settings(BaseSettings):
 
     N8N_BASE_URL: str = "http://localhost:5678"
     N8N_API_KEY: str = ""
-    OPENAI_API_KEY: str = ""
-    OPENAI_MODEL: str = "gpt-4"
+    HUGGINGFACE_API_KEY: str = ""
+    HUGGINGFACE_BASE_URL: str = "https://router.huggingface.co/v1"
+    HUGGINGFACE_MODEL: str = "meta-llama/Llama-3.3-70B-Instruct"
     LOG_LEVEL: str = "INFO"
     REQUEST_TIMEOUT_SECONDS: float = 30.0
     MAX_RETRIES: int = 3

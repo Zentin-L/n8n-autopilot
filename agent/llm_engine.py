@@ -33,12 +33,15 @@ class AgentResponse:
 
 
 class LLMEngine:
-    """Wraps OpenAI chat completions with memory and tool-calling support."""
+    """Wraps Hugging Face chat completions with memory and tool-calling support."""
 
     def __init__(self, system_prompt: str) -> None:
         settings = get_settings()
-        self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
-        self.model = settings.OPENAI_MODEL
+        self.client = OpenAI(
+            api_key=settings.HUGGINGFACE_API_KEY,
+            base_url=settings.HUGGINGFACE_BASE_URL,
+        )
+        self.model = settings.HUGGINGFACE_MODEL
         self.messages: list[dict[str, Any]] = [{"role": "system", "content": system_prompt}]
 
     def clear_memory(self) -> None:

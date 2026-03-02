@@ -7,7 +7,7 @@ Python AI agent application that connects to n8n via REST API and creates, manag
 - Natural language to n8n workflow generation
 - Workflow CRUD, activation/deactivation, and manual execution
 - Execution history lookup
-- Tool-calling agent loop with OpenAI
+- Tool-calling agent loop with Hugging Face
 - Workflow JSON preview and confirmation before creation
 - Confirmation before destructive deletion
 - Rich CLI interface with built-in commands
@@ -63,7 +63,9 @@ n8n-ai-agent/
    Required:
    - `N8N_BASE_URL`
    - `N8N_API_KEY`
-   - `OPENAI_API_KEY`
+   - `HUGGINGFACE_API_KEY`
+   - `HUGGINGFACE_BASE_URL`
+   - `HUGGINGFACE_MODEL`
 
 3. Run the CLI:
 
@@ -82,7 +84,7 @@ n8n-ai-agent/
 
 - Create a workflow that triggers every morning at 9am and sends a Slack message saying Good Morning to #general.
 - Build a workflow with a webhook trigger that receives JSON data, filters items where status is active, then saves them to a Google Sheet.
-- Create a workflow that monitors Gmail inbox attachments, summarizes via OpenAI, and posts to Discord.
+- Create a workflow that monitors Gmail inbox attachments, summarizes via Llama 3.3, and posts to Discord.
 - List all my workflows.
 - Execute workflow ID 5.
 - Deactivate all workflows with test in the name.
